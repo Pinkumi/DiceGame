@@ -8,7 +8,7 @@ public class DiceUI extends Label {
     private int xPosition, yPosition;
     private Dice dice;
     public DiceUI(Dice dice) {
-        Font font = new Font("Arial", 90);
+        Font font = new Font("Arial", 60);
         String emoji = new String(Character.toChars(EMOJI_DADO+1));
         setText(emoji);
         setFont(font);

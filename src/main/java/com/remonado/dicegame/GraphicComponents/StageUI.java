@@ -20,22 +20,31 @@ public class StageUI extends VBox {
         hBoxStage = new HBox();
         //this.setAlignment(Pos.CENTER);
         this.setFillWidth(true);
+        this.setMaxWidth(250);
+        this.setMinWidth(250);
+        this.setPrefWidth(250);
         hBoxStage.setSpacing(20);
         this.stage = stage;
         this.stageIdx = stageIdx;
         dice = new DiceUI(stage.getDice());
         dice.setMaxWidth(USE_PREF_SIZE);
         queueGrid = new GridPane();
-        hBoxStage.getChildren().add(queueGrid);
+
         //hBoxStage.setAlignment(Pos.CENTER);
         setGraphic();
         this.getChildren().add(hBoxStage);
+        hBoxStage.getChildren().add(queueGrid);
         this.getChildren().add(dice);
-
+        this.getStyleClass().add("stage-box");
+        queueGrid.getStyleClass().add("queue-grid");
         refresh();
+
+    }
+    public void refreshDice(){
+        dice.refresh();
     }
     public void refresh(){
-        dice.refresh();
+
         queueGrid.getChildren().clear();
         int maxCols = 5;
 

@@ -19,8 +19,10 @@ public class HelloApplication extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Controller control = new Controller(new DiceGame());
         GameUI root = control.getScene();
-
         Scene scene = new Scene(root, 1800, 800);
+        scene.getStylesheets().add("file:src/main/resources/com/remonado/dicegame/css/stage.css");
+        scene.getStylesheets().add("file:src/main/resources/com/remonado/dicegame/css/rollDiceBTN.css");
+
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
